@@ -1,4 +1,4 @@
-import { dbConfig } from "../../config/index.js"
+import { dbConfig } from "./index.js"
 
 const Config = {
 
