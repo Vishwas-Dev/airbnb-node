@@ -6,7 +6,9 @@
   "scripts": {
     "start": "tsx src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec tsx src/server.ts"
+    "dev": "nodemon --exec tsx src/server.ts",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:undo": "sequelize-cli db:migrate:undo"
   },
   "keywords": [],
   "author": "",
