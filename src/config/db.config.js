@@ -9,7 +9,6 @@ const Config = {
         host: dbConfig.DB_HOST,
         dialect: 'mysql',
 
-
     }
 }
 
