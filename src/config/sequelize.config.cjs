@@ -1,6 +1,4 @@
-// require('ts-node/register');
-//     const config = require('db_config');
-//     module.exports = conffig;
+
 
 require('dotenv').config();
 
