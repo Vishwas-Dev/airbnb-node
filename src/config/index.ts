@@ -27,9 +27,3 @@ export const dbConfig: DbConfig = {
     DB_PASSWORD: process.env.DB_PASSWORD || "root",
     DB_USERNAME: process.env.DB_USERNAME || "test_db"
 }
-// export const dbConfig: DbConfig = {
-//   DB_HOST: process.env.DB_HOST || "localhost",
-//   DB_NAME: process.env.DB_NAME || "test_db",
-//   DB_PASSWORD: process.env.DB_PASSWORD || "root",
-//   DB_USERNAME: process.env.DB_USERNAME || "root",
-// };
