@@ -26,24 +26,6 @@ app.use(genericErrorHandler);
 app.listen(serverConfig.PORT, async () => {
     console.log(`Server is running on http://localhost:${serverConfig.PORT}`);
     logger.info(`Press Ctrl+C to stop the server.`);
-
-    try {
-        await sequelize.authenticate();
-        logger.info("database connectioin has been established successfully.");
-
-        const hotel = await Hotel.create({
-            name: "deluxe hotel",
-            address: "Karol bagh",
-            location: "AA Block",
-            rating: 4.5,
-            ratingCount: 90
-        })
-
-        logger.info("hotel created successfully", hotel);
-        console.log("-----------------------");
-    } catch (error) {
-        logger.error("something went wrong in db queries");
-    }
-    
-
+    await sequelize.authenticate();
+    logger.info("database connectioin has been established successfully.");
 });
