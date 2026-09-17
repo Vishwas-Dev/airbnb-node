@@ -1,4 +1,4 @@
-export type hotelUserDto = {
+export type hotelUserDTO = {
   name: string;
   address: string;
   location: string;
