@@ -6,7 +6,6 @@ import { genericErrorHandler } from './middlewares/error.middleware.js';
 import v1Router from './routers/v1/index.router.js';
 import v2Router from './routers/v2/index.router.js';
 import sequelize from './db/modeles/sequelize.js';
-import { Hotel } from './db/modeles/hotel.js';
 
 
 const app = express();
