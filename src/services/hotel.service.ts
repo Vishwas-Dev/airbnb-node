@@ -7,7 +7,7 @@ export async function createHotelService(hotelData: hotelUserDTO) {
 }
 
 
-export async function getHotelServiceById(id: number) {
+export async function getHotelByIdService(id: number) {
     const hotel = await Hotel.findByPk(id);
     return hotel;
 }
