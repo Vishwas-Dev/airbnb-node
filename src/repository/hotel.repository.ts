@@ -8,8 +8,8 @@ export async function createHotel(hotelData: hotelUserDTO) {
     name: hotelData.name,
     address: hotelData.address,
     location: hotelData.location,
-    rating: hotelData?.rating,
-    ratingCount: hotelData?.ratingCount
+    rating: hotelData.rating,
+    ratingCount: hotelData.ratingCount
 
 });
     logger.info(`Hotel Created: ${hotel.id}`);
@@ -21,10 +21,10 @@ const hotel = await Hotel.findByPk(id);
 
 if(!hotel){
         logger.error(`hotel not found ${id}`)
-        throw new NotFoundError(`hotel is not found with ${id}`); 
+        throw new NotFoundError(`hotel with ${id} not found`); 
     }
 
-    logger.info(`Hotel Created: ${hotel}`);
+    logger.info(`Hotel Found: ${hotel}`);
    return hotel;
 }
 

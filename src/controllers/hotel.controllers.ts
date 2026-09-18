@@ -17,8 +17,8 @@ export async function getHotelByIdHandler( req: Request,res : Response, next: Ne
      const hotelResponse = await getHotelByIdService(Number(req.params.id));
 
     // send the response
-      res.status(201).json({
-        message: "hotel created successfully ",
+      res.status(200).json({
+        message: "hotel found successfully ",
         data: hotelResponse,
         success: true
     });
