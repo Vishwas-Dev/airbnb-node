@@ -23,7 +23,6 @@ if(!hotel){
         logger.error(`hotel not found ${id}`)
         throw new NotFoundError(`hotel with ${id} not found`); 
     }
-
     logger.info(`Hotel Found: ${hotel}`);
    return hotel;
 }
