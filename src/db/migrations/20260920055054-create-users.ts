@@ -4,7 +4,7 @@ import { QueryInterface } from "sequelize"
 export default {
   async up(queryInterface: QueryInterface) {
     await queryInterface.sequelize.query(`
-      CREATE TABLE IF NOT EXIST users (
+      CREATE TABLE IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255) NOT NULL,
         address VARCHAR(255) NOT NULL,
@@ -16,14 +16,17 @@ export default {
       )  
 
     `)
+  },
 
-  }
-};
-
-async down(queryInterface: QueryInterface) {
+  async down(queryInterface: QueryInterface) {
   await queryInterface.sequelize.query(`
       DROP TABLE IF EXISTS users;
     `);
 },
+
+
+};
+
+
 
 
