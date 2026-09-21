@@ -35,3 +35,13 @@ export class NotFoundError implements AppError {
         this.name = "NotFoundError";
     }
 }
+export class NotImplemented implements AppError {
+    statusCode: number;
+    message: string;
+    name: string;
+    constructor(message: string) {
+        this.statusCode = 501;
+        this.message = message;
+        this.name = "Not Implemented";
+    }
+}

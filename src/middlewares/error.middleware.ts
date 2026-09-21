@@ -7,6 +7,7 @@ export const genericErrorHandler = (err: AppError, req: Request, res: Response, 
     console.log(err);
     res.status(err.statusCode).json({
         success: false,
-        message: err.message
+        message: err.message 
     })
 }
+

@@ -1,5 +1,5 @@
 import { hotelUserDTO } from "../dto/hotel.dto.js";
-import { createHotel, getHotelById } from "../repository/hotel.repository.js";
+import { createHotel, getAllHotels, getHotelById } from "../repository/hotel.repository.js";
 
 export async function createHotelService(hotelData: hotelUserDTO) {
     const hotel = await createHotel(hotelData);
@@ -12,3 +12,10 @@ export async function getHotelByIdService(id: number) {
    
     return hotel;
 }
+
+export async function getAllHotelsService() {
+    const hotel = await getAllHotels();
+
+    return hotel;
+}
+

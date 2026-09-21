@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { createHotelService, getHotelByIdService } from "../services/hotel.service.js";
+import { createHotelService, getAllHotelsService, getHotelByIdService } from "../services/hotel.service.js";
+import { NotFoundError } from "../utilis/error/app.error.js";
 
 export async function createHotelHandler( req: Request,res : Response, next: NextFunction) {
      // call the service layer
@@ -22,5 +23,22 @@ export async function getHotelByIdHandler( req: Request,res : Response, next: Ne
         data: hotelResponse,
         success: true
     });
+}
+
+
+export async function getAllHotelsdHandler( req: Request,res : Response, next: NextFunction){
+ const  hotelRespones = await getAllHotelsService();
+//  return hotelRespones;
+
+  // send the response
+    if (hotelRespones.length === 0) {
+        throw new NotFoundError("No hotels found");
+    }
+      res.status(501).json({
+        message: "all hotel found successfully ",
+        data: hotelRespones,
+        success: true
+    });
+
 }
 
