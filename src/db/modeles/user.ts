@@ -6,7 +6,7 @@ import {
     CreationOptional,
 } from "sequelize";
 
-import sequelize from "../sequelize.js";
+import sequelize from "./sequelize.js";
 
 export class User extends Model<
     InferAttributes<User>,
@@ -48,6 +48,14 @@ User.init(
         address: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+            createdAt: {
+            type: "DATE",
+            defaultValue: new Date()
+        },
+        updatedAt: {
+            type: "DATE",
+            defaultValue: new Date()
         },
     },
     {

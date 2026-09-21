@@ -1,15 +1,11 @@
-import { z } from "zod/v3";
+import z from "zod/v3";
 
 export const userSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  age: z.number().int(),
+    name: z.string().min(1),
+    email: z.string().min(1),
+    phone: z.string().min(1),
+    address: z.string().min(1),
+
 });
-// TEST
-// const result = userSchema.safeParse({
-//     name: "Vishal",
-//     email: "aakash@gmail.com",
-//     age: 25,
-//   });
-  
-//   console.log(result);
+
+ 
