@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { createHotelService, getAllHotelsService, getHotelByIdService } from "../services/hotel.service.js";
+import { createHotelService, deleteHotelsService, getAllHotelsService, getHotelByIdService } from "../services/hotel.service.js";
 import { NotFoundError } from "../utilis/error/app.error.js";
 import { StatusCodes } from "http-status-codes";
 
@@ -42,4 +42,17 @@ export async function getAllHotelsdHandler( req: Request,res : Response, next: N
     });
 
 }
+// export async function deleteHotelsdHandler( req: Request,res : Response, next: NextFunction){
+//  const  hotelRespones = await deleteHotelsService();
+// //  return hotelRespones;
+
+//   // send the response
+  
+//       res.status(StatusCodes.NOT_IMPLEMENTED).json({
+//         message: "all hotel found successfully ",
+//         data: hotelRespones,
+//         success: true
+//     });
+
+// }
 
