@@ -2,7 +2,7 @@ import { CreationOptional, InferAttributes, InferCreationAttributes, Model } fro
 import sequelize from "./sequelize.js";
 
 export class Hotel extends Model<
-InferAttributes<Model>, InferCreationAttributes<Model>
+    InferAttributes<Model>, InferCreationAttributes<Model>
 > {
 
     declare id: CreationOptional<number>;
@@ -11,6 +11,7 @@ InferAttributes<Model>, InferCreationAttributes<Model>
     declare location: string;
     declare createdAt: CreationOptional<Date>;
     declare updatedAt: CreationOptional<Date>;
+    declare deletedAt: CreationOptional<Date>;
     declare rating?: number;
     declare ratingCount: number;
 
@@ -35,6 +36,12 @@ Hotel.init(
             type: "STRING",
             allowNull: false
         },
+
+         deletedAt: {
+            type: "DATE",
+            defaultValue: null
+        },
+        
         createdAt: {
             type: "DATE",
             defaultValue: new Date()
@@ -44,18 +51,20 @@ Hotel.init(
             defaultValue: new Date()
         },
         rating: {
-            type:"FLOAT",
+            type: "FLOAT",
             defaultValue: null
         },
         ratingCount: {
             type: "INTEGER",
             defaultValue: null
-        }
+        },
+
+       
     },
     {
         tableName: 'hotels',
         sequelize: sequelize,
         underscored: true,
-        timestamps:  true,
+        timestamps: true,
     }
 );
