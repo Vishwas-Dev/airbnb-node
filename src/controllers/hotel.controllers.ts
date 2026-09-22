@@ -35,24 +35,24 @@ export async function getAllHotelsdHandler( req: Request,res : Response, next: N
     if (hotelRespones.length === 0) {
         throw new NotFoundError("No hotels found");
     }
-      res.status(StatusCodes.NOT_IMPLEMENTED).json({
+      res.status(StatusCodes.OK).json({
         message: "all hotel found successfully ",
         data: hotelRespones,
         success: true
     });
 
 }
-// export async function deleteHotelsdHandler( req: Request,res : Response, next: NextFunction){
-//  const  hotelRespones = await deleteHotelsService();
-// //  return hotelRespones;
+export async function deleteHotelsdHandler( req: Request,res : Response, next: NextFunction){
+ const  hotelRespones = await deleteHotelsService(Number(req.params.id));
+//  return hotelRespones;
 
-//   // send the response
+  // send the response
   
-//       res.status(StatusCodes.NOT_IMPLEMENTED).json({
-//         message: "all hotel found successfully ",
-//         data: hotelRespones,
-//         success: true
-//     });
+      res.status(StatusCodes.OK).json({
+        message: " hotels deleted successfully ",
+        data: hotelRespones,
+        success: true
+    });
 
-// }
+}
 

@@ -1,5 +1,5 @@
 import express from 'express';
-import { createHotelHandler, getAllHotelsdHandler, getHotelByIdHandler } from '../../controllers/hotel.controllers.js';
+import { createHotelHandler, deleteHotelsdHandler, getAllHotelsdHandler, getHotelByIdHandler } from '../../controllers/hotel.controllers.js';
 import { hotelSchema } from '../../validator/hotel.validator.js';
 import { validateRequestBody } from '../../validator/index.js';
 
@@ -15,10 +15,14 @@ hotelRouter.post(
         '/all', 
         getAllHotelsdHandler);
         
-hotelRouter.get(
-    '/:id', 
-    getHotelByIdHandler);
-
+        hotelRouter.delete(
+            '/:id', 
+            deleteHotelsdHandler);
+            
+            hotelRouter.get(
+                '/:id', 
+                getHotelByIdHandler);
+                
 
 
 export default hotelRouter;

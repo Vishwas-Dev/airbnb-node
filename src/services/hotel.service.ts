@@ -21,7 +21,5 @@ export async function getAllHotelsService() {
 export async function deleteHotelsService(id: number) {
     const hotel = await softDeleteHotel(id);
     return hotel;
-
-    return hotel;
 }
 
