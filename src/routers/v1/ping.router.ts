@@ -2,6 +2,7 @@ import express from 'express';
 import { pingHandler } from '../../controllers/ping.controller.js';
 import { validateRequestBody } from '../../validator/index.js';
 import { pingSchema } from '../../validator/ping.validator.js';
+import { StatusCodes } from 'http-status-codes';
 
 
 
@@ -14,7 +15,7 @@ pingRouter.get(
   );
 
 pingRouter.get('/health', (req, res) => {
-    res.status(200).send('OK');
+    res.status(StatusCodes.OK).send('OK');
 
 });
 
