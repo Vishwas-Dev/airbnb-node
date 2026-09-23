@@ -6,7 +6,7 @@ export type hotelUserDTO = {
   ratingCount?: number;
 };
 export type updateHotelUserDTO = {
-  name: string;
-  address: string;
-  location: string;
+  name?: string;
+  address?: string;
+  location?: string;
 };

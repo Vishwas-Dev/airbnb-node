@@ -51,6 +51,7 @@ export async function softDeleteHotel(id: number) {
 
 
 }
+
 export async function updateHotel(id: number, hotelData: updateHotelUserDTO) {
     const hotel = await Hotel.findByPk(id);
     if (!hotel) {
