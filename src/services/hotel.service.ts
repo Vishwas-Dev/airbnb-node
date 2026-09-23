@@ -1,5 +1,5 @@
-import { hotelUserDTO } from "../dto/hotel.dto.js";
-import { createHotel, getAllHotels, getHotelById, softDeleteHotel } from "../repository/hotel.repository.js";
+import { hotelUserDTO, updateHotelUserDTO } from "../dto/hotel.dto.js";
+import { createHotel, getAllHotels, getHotelById, softDeleteHotel, updateHotel } from "../repository/hotel.repository.js";
 
 export async function createHotelService(hotelData: hotelUserDTO) {
     const hotel = await createHotel(hotelData);
@@ -20,6 +20,10 @@ export async function getAllHotelsService() {
 }
 export async function deleteHotelsService(id: number) {
     const hotel = await softDeleteHotel(id);
+    return hotel;
+}
+export async function updateHotelsService(id: number, hotelData: updateHotelUserDTO ) {
+    const hotel = await updateHotel(id, hotelData);
     return hotel;
 }
 
