@@ -5,3 +5,8 @@ export type hotelUserDTO = {
   rating?: number;
   ratingCount?: number;
 };
+export type updateHotelUserDTO = {
+  name: string;
+  address: string;
+  location: string;
+};
