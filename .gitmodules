@@ -1,0 +1,3 @@
+[submodule "HotelService"]
+	path = HotelService
+	url = https://github.com/Vishwas-Dev/hotel-service.git
