@@ -4,3 +4,6 @@
 [submodule "BookingService"]
 	path = BookingService
 	url = https://github.com/Vishwas-Dev/booking-service.git
+[submodule "NotificationService"]
+	path = NotificationService
+	url = https://github.com/Vishwas-Dev/NotificationService.git
